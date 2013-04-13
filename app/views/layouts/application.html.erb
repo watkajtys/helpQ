@@ -7,8 +7,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="navbar">
+		<div class = 'navbar-inner'>
+			<div class = "container">
+				<a class='brand'href='#'>HelpQ</a>
+					<div class ="nav-collapse collapse">
+				<ul class ="nav">
+					<li class=" <% 'active' if @nav == :home %>">
+						<%= link_to 'Home', :root %>
+					</li>
+				</ul>
 
-<%= yield %>
+				<div class="pull-right">
+        			<% if logged_in? %>
+          				<%= link_to 'Logout', :session, :method => :delete, class: 'btn' %>
+       				<% else %>
+          				<%= link_to 'Sign Up', [:new, :user], class: 'btn btn-primary' %>
+          				<%= link_to 'Sign In', [:new, :session], class: 'btn btn-success' %>
+        			<% end %>
+      			</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+	    <% if flash[:notice] %>
+	      <div class="alert alert-success">
+	        <%= flash[:notice] %>
+	      </div>
+	    <% elsif flash[:alert] %>
+	      <div class="alert alert-error">
+	        <%= flash[:alert] %>
+	      </div>
+	    <% end %>
+
+		<%= yield %>
+	</div>	
 
 </body>
 </html>
