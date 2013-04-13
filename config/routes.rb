@@ -1,15 +1,17 @@
 HelpQ::Application.routes.draw do
-  get "sessions/new"
 
-  get "sessions/create"
-
-  get "sessions/destroy"
 
  resources :users
 
   root :to => 'home#index'
 
   resource :session, :only => [:new, :create, :destroy]
+
+  resources :tickets, :only => [:index]
+
+  namespace :my do
+    resources :tickets, :except => [:show]
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

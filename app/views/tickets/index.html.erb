@@ -1,0 +1,11 @@
+<h1>Current Support Requests</h1>
+
+<ul>
+	<% @tickets.each do |ticket| %>
+	<div>
+		<%= User.find(ticket.user_id).first_name %>
+		<%= User.find(ticket.user_id).last_name %> -- 
+		<%= ticket.description %>
+	</div>
+	<% end %>
+</ul>
