@@ -13,9 +13,15 @@
 				<a class='brand'href='#'>HelpQ</a>
 					<div class ="nav-collapse collapse">
 				<ul class ="nav">
-					<li class=" <% 'active' if @nav == :home %>">
+					<li class="<% 'active' if @nav == :home %>">
 						<%= link_to 'Home', :root %>
 					</li>
+					<% if logged_in? %>
+						<li class="<%= 'active' if @nav == 'my/tickets#show' %>">
+							<%= link_to "Create Ticket", new_my_ticket_path %>
+						</li>
+					<% end %>
+
 				</ul>
 
 				<div class="pull-right">
