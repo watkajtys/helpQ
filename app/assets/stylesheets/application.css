@@ -19,3 +19,21 @@
  	margin-top: 50px;
  	position: relative;
  }
+
+.ticket {
+	margin: 40px;
+	padding: 10px;
+	background-color: #18AFBA;
+	display: block;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.ticket > h1 {
+	font-size: 4em;
+	color: #222;
+}
+
+.ticket > h2 {
+	color: #333;
+}

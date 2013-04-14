@@ -9,6 +9,7 @@ gem 'pg'
 gem 'haml'
 gem 'haml-rails'
 gem 'sorcery'
+gem 'jquery-cookie-rails'
 
 
 

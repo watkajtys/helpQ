@@ -12,11 +12,26 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.cookie
 //= require_tree .
 
 $(document).ready(function(){
-	$('.help').click(function(){
-		console.log('clicked');
+	var requestBtn = $('.crequest');
+	var helpBtn = $('.help');
 
+	if ($.cookie('clicked') == 'true'){
+		helpBtn.hide();
+		$('.well').prepend(requestBtn);
+	} else {
+		requestBtn.hide();
+	};
+
+	helpBtn.click(function(){
+		helpBtn.hide();
+		$.cookie('clicked', 'true', {path: '/'});
+	});
+
+	requestBtn.click(function(){
+		$.removeCookie('clicked', {path: '/'});
 	});
 });
