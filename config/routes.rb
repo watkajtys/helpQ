@@ -9,9 +9,15 @@ HelpQ::Application.routes.draw do
 
   resources :tickets, :only => [:index]
 
+
+post '/my/tickets/:id/' => "my/tickets#status", :as => 'tickets_status'
+
   namespace :my do
-    resources :tickets, :except => [:show]
+    resources :tickets
   end
+
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

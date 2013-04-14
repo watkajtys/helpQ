@@ -1,0 +1,19 @@
+<h1>Current Ticket for <%= User.find(@ticket.user_id).first_name %>
+		<%= User.find(@ticket.user_id).last_name %></h1>
+
+<div class = "ticket">
+
+<h2><%= @ticket.description %></h2>
+
+<%= link_to "Update Ticket", edit_my_ticket_path %>
+
+<%= link_to "Close Ticket", @image, :method => :delete, :confirm => "You're about to close this ticket. Are you sure?" %>
+
+	<div class = "row">
+		<div class = "span8 well centered">
+			<%= link_to "Click When Help Arrives", tickets_status_path(@ticket), :method => :status %>
+			<button class="btn btn-large btn-block btn-primary help" type="button">I am being helped!</button>
+		</div>
+	</div>
+
+</div>

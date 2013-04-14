@@ -1,0 +1,13 @@
+<h1> Edit Ticket </h1>
+
+</hr>
+
+<%= form_for [:my, @ticket] do |f| %>
+	<%= f.text_field :description, placeholder: "Change Description" %>
+	
+
+	<div class= "form-actions">
+	<%= f.submit 'Update Ticket' %>
+	</div>
+
+<% end %>	
