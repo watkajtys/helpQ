@@ -12,6 +12,7 @@ HelpQ::Application.routes.draw do
 
 post '/my/tickets/:id/' => "my/tickets#status", :as => 'tickets_status'
 
+
   namespace :my do
     resources :tickets
   end

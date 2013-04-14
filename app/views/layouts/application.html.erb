@@ -17,9 +17,16 @@
 						<%= link_to 'Home', :root %>
 					</li>
 					<% if logged_in? %>
+						<% if current_ticket == nil %>
+							<li class="<%= 'active' if @nav == 'my/tickets#show' %>">
+								<%= link_to "Create Ticket", new_my_ticket_path %>
+							</li>
+						<% end %> 
+						
 						<li class="<%= 'active' if @nav == 'my/tickets#show' %>">
-							<%= link_to "Create Ticket", new_my_ticket_path %>
-						</li>
+							<% if current_ticket != nil %>
+								<%= link_to "My Ticket", my_ticket_path(current_ticket) %>
+							<% end %>
 					<% end %>
 
 				</ul>
