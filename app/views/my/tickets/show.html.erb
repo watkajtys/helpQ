@@ -7,15 +7,12 @@
 
 </div>
 
-<%= link_to "Update Ticket", edit_my_ticket_path %>
-
-<%= link_to "Close Ticket", @image, :method => :delete, :confirm => "You're about to close this ticket. Are you sure?" %>
-
 	<div class = "row">
 		<div class = "span8 well centered">
 			
 			<%= button_to "Click When Help Arrives", tickets_status_path(@ticket), :method => :status, :class => "btn btn-large btn-block btn-info help"%>
 			<%= link_to "Close Help Request", @image, :method => :delete, :confirm => "You're about to close this ticket. Are you sure?", :class => "btn btn-large btn-block btn-danger crequest" %>
+			<%= link_to "Update Ticket", edit_my_ticket_path %>
 		</div>
 	</div>
 

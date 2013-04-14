@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
 </head>
 <body>
 	<div class="navbar">
@@ -19,13 +20,13 @@
 					<% if logged_in? %>
 						<% if current_ticket == nil %>
 							<li class="<%= 'active' if @nav == 'my/tickets#show' %>">
-								<%= link_to "Create Ticket", new_my_ticket_path %>
+								<%= link_to "Create Help Request", new_my_ticket_path %>
 							</li>
 						<% end %> 
 						
 						<li class="<%= 'active' if @nav == 'my/tickets#show' %>">
 							<% if current_ticket != nil %>
-								<%= link_to "My Ticket", my_ticket_path(current_ticket) %>
+								<%= link_to "My Help Request", my_ticket_path(current_ticket) %>
 							<% end %>
 					<% end %>
 
@@ -54,7 +55,10 @@
 	      </div>
 	    <% end %>
 
-		<%= yield %>
+	    <div class = "content">
+
+			<%= yield %>
+		</div>
 	</div>	
 
 </body>

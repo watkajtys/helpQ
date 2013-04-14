@@ -22,6 +22,7 @@ $(document).ready(function(){
 	if ($.cookie('clicked') == 'true'){
 		helpBtn.hide();
 		$('.well').prepend(requestBtn);
+		$('.ticket').addClass('helped');
 	} else {
 		requestBtn.hide();
 	};
