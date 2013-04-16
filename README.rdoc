@@ -1,4 +1,6 @@
 == What is HelpQ?
-HelpQ is an application developed by <a href="https://github.com/watkajtys" target="_blank" >Matt Watkajtys</a> and <a href="https://github.com/ericknieto211" target="_blank">Erick Niero</a> during a 48 hour hack-a-thon at Bitmaker Labs!
+HelpQ is an application developed by https://github.com/watkajtys and https://github.com/ericknieto211 during a 48 hour hack-a-thon at Bitmaker Labs!
+
 HelpQ was designed to be a real-time queue system to seek Teacher support during free work hours. All active support tickets are shown on the home page in order they are recieved. Updating of tickets occurs student side, as teachers are not likely to carry personal computing devices with them at all times.
-When a student is being helped, they update the ticket by clicking "I'm being helped". The server updates the request and the ticket changes color to notify TA's who is next in line. When the request is filled, the student closes the ticket and it is removed from the list. The project is located on <a href="https://github.com/watkajtys/helpQ" target ='_blank'>Github!
+
+When a student is being helped, they update the ticket by clicking "I'm being helped". The server updates the request and the ticket changes color to notify TA's who is next in line. When the request is filled, the student closes the ticket and it is removed from the list.
