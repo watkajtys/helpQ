@@ -14,9 +14,12 @@
 				<a class='brand'href='#'>HelpQ</a>
 					<div class ="nav-collapse collapse">
 				<ul class ="nav">
-					<li class="<% 'active' if @nav == :home %>">
+					<li class="<%= 'active' if params[:controller] == 'home' %>">
 						<%= link_to 'Home', :root %>
 					</li>
+               <li class="<%= 'active' if params[:controller] == 'faq' %>">
+                  <%= link_to 'FAQ', faq_index_path %>
+               </li>
 					<% if logged_in? %>
 						<% if current_ticket == nil %>
 							<li class="<%= 'active' if @nav == 'my/tickets#show' %>">

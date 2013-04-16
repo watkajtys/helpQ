@@ -9,6 +9,8 @@ HelpQ::Application.routes.draw do
 
   resources :tickets, :only => [:index]
 
+  resources :faq, :only => [:index]
+
 
 post '/my/tickets/:id/' => "my/tickets#status", :as => 'tickets_status'
 
