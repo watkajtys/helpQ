@@ -4,3 +4,11 @@ HelpQ is an application developed by https://github.com/watkajtys and https://gi
 HelpQ was designed to be a real-time queue system to seek Teacher support during free work hours. All active support tickets are shown on the home page in order they are recieved. Updating of tickets occurs student side, as teachers are not likely to carry personal computing devices with them at all times.
 
 When a student is being helped, they update the ticket by clicking "I'm being helped". The server updates the request and the ticket changes color to notify TA's who is next in line. When the request is filled, the student closes the ticket and it is removed from the list.
+
+Javascript handles the UI updating client side when a student updates a support ticket. Immediately, JS removes the "I'm being helped" button and replaces it with the "Close Ticket" button. To remember the state client side, cookies had to be introduced that are immeediately destroyed upon closing a ticket. 
+
+Updates to the home page are handled by querying the database to check on the status of a ticket.
+
+Gems being used are: 
+Sorcery: https://github.com/NoamB/sorcery
+Jquery-cookie-rails: https://github.com/RyanScottLewis/jquery-cookie-rails
